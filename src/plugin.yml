@@ -1,0 +1,9 @@
+name: SiriLog
+main: sirilog.main
+version: 0.0.0-3
+commands:
+   sl:
+      description: Shows SiriLog's version.
+      usage: /sl
+      permission: sirilog.info
+      permission-message: You don't have permission to use info command.
