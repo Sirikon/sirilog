@@ -1,6 +1,6 @@
 name: SiriLog
 main: sirilog.main
-version: 0.0.0-3
+version: 0.0.1
 commands:
    sl:
       description: Shows SiriLog's version.

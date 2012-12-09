@@ -40,7 +40,7 @@ public final class main extends JavaPlugin {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 	if(cmd.getName().equalsIgnoreCase("sl")){
-		sender.sendMessage("SiriLog v0.0.0-3 running on this server!");
+		sender.sendMessage("SiriLog v0.0.1 running on this server!");
 		return true;
 	}
 	return false; 
