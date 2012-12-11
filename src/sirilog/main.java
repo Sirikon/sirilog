@@ -59,7 +59,7 @@ public final class main extends JavaPlugin {
                         break;
                 }
             }else {
-                sender.sendMessage("SiriLog 0.0.1 running on this server!");
+                sender.sendMessage("SiriLog 0.0.2 running on this server!");
             }
             return true;
         }
