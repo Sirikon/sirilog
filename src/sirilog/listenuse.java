@@ -6,7 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public final class uselisten implements Listener {
+public final class listenuse implements Listener {
     @EventHandler
     public void onPlayerUses(PlayerInteractEvent event) throws IOException {
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK){

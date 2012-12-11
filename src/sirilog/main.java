@@ -10,9 +10,10 @@ public final class main extends JavaPlugin {
     
     @Override
     public void onEnable(){        
-        getServer().getPluginManager().registerEvents(new breaklisten(), this);
-        getServer().getPluginManager().registerEvents(new putlisten(), this);
-        getServer().getPluginManager().registerEvents(new uselisten(), this);
+        getServer().getPluginManager().registerEvents(new listenbreak(), this);
+        getServer().getPluginManager().registerEvents(new listenput(), this);
+        getServer().getPluginManager().registerEvents(new listenuse(), this);
+        getServer().getPluginManager().registerEvents(new listenchest(), this);
         File sirilogdir = new File("plugins/SiriLog");
         File sirilog = new File("plugins/SiriLog/sirilog.log");
         if (!(sirilog.exists())){
@@ -39,10 +40,29 @@ public final class main extends JavaPlugin {
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-	if(cmd.getName().equalsIgnoreCase("sl")){
-		sender.sendMessage("SiriLog v0.0.1 running on this server!");
-		return true;
-	}
-	return false; 
+	if(cmd.getName().equalsIgnoreCase("sl")) {
+            if (args.length >= 1){
+                switch (args[0]) {
+                    case "save":
+                        try {
+                            logsave.finalsave();
+                        } catch (IOException ex) {
+                            getLogger().info("Error saving queue, aborted: " + ex.getMessage());
+                        }
+                        sender.sendMessage("Queue saved");
+                        break;
+                    case "queue":
+                        sender.sendMessage(logsave.logs.size() + " in queue");
+                        break;
+                    default:
+                        sender.sendMessage("Unknown SiriLog command");
+                        break;
+                }
+            }else {
+                sender.sendMessage("SiriLog 0.0.1 running on this server!");
+            }
+            return true;
+        }
+        return false;
     }
 }

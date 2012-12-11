@@ -29,6 +29,7 @@ public final class logsave extends JavaPlugin {
     }
     
     public static void finalsave() throws IOException{
+        Integer s = logs.size();
         File sirilog = new File("plugins/SiriLog/sirilog.log");
         FileWriter fw = new FileWriter(sirilog, true);
         try (PrintWriter pw = new PrintWriter(fw)) {
@@ -38,6 +39,6 @@ public final class logsave extends JavaPlugin {
             }
         }
         logs.clear();
-        System.out.println("[SiriLog] Saved 15 log lines");
+        System.out.println("[SiriLog] Saved " + s + " log lines");
     }
 }
