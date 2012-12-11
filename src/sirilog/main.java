@@ -14,6 +14,7 @@ public final class main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new listenput(), this);
         getServer().getPluginManager().registerEvents(new listenuse(), this);
         getServer().getPluginManager().registerEvents(new listenchest(), this);
+        getServer().getPluginManager().registerEvents(new listenexplode(), this);
         File sirilogdir = new File("plugins/SiriLog");
         File sirilog = new File("plugins/SiriLog/sirilog.log");
         if (!(sirilog.exists())){
@@ -59,7 +60,7 @@ public final class main extends JavaPlugin {
                         break;
                 }
             }else {
-                sender.sendMessage("SiriLog 0.0.2 running on this server!");
+                sender.sendMessage("SiriLog 0.0.3 running on this server!");
             }
             return true;
         }
