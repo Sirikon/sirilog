@@ -13,14 +13,17 @@ Features
 SiriLog can __log__:
 - Block placing/breaking
 - Door/Lever/Button Interactions
+- Chest opened
 
 Commands
 ========
 - __/sl__: Shows the SiriLog's version
+- __/sl queue__: Shows how many changes are on queue for save
+- __/sl save__: Save the actual queue
 
 Permissions
 ===========
-- __sirilog.info__: Allow to use "/sl" for show SiriLog's version
+- __sirilog.info__: Allow to use "/sl", "/sl queue" and "/sl save"
 
 Configuration
 =============
