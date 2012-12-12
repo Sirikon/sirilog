@@ -6,10 +6,7 @@ __Tested on Tekkit!__
 
 But... what exactly does SiriLog?
 =================================
-SiriLog records events on your server, and whenever SiriLog record 15 events, save them in a file called "sirilog.log" in "plugins/SiriLog" with the time and date it was recorded, the coordinates and world of the event, the user that caused it and the affected block type.</p>
-
-__Example log line:__
-> [2012/11/25 10:32:44] Sirikon broke COBBLESTONE X=40 Y=20 Z=60 world
+SiriLog records events on your server, and whenever SiriLog record 15 events, save them in a file called "sirilog.log" in "plugins/SiriLog" with the time and date it was recorded, the coordinates and world of the event, the user that caused it and the affected block type.
 
 In the future will be able to save the data in a MySQL database.
 
@@ -21,6 +18,24 @@ SiriLog can __log__:
 - Door/Lever/Button Interactions
 - Chest opennings
 - Explosions (TNT, Creepers...)
+
+Log Examples
+============
+
+__Block Placing__
+> [2012/11/25 10:32:44] User put COBBLESTONE X=60 Y=20 Z=60 world
+
+__Block breaking__
+> [2012/11/25 10:32:44] Grieffer broke SMOOTH_BRICK X=3 Y=4 Z=500 world_nether
+
+__Door Interactions__
+> [2012/11/25 10:32:44] User used WOODEN_DOOR X=300 Y=450 Z=12 world
+
+__Chest Oppening__
+> [2012/11/25 10:32:44] Thief opened DOUBLE_CHEST X=233 Y=424 Z=125 world
+
+__Explosions__
+> [2012/11/25 10:32:44] \[ENVIRONMENT\] explosionof PRIMED_TNT X=1 Y=2 Z=3 world
 
 Commands
 ========
