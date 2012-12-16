@@ -42,6 +42,7 @@ Commands
 - __/sl__: Shows the SiriLog's version
 - __/sl queue__: Shows how many changes are on queue for save
 - __/sl save__: Save the actual queue
+- __/sl reload__: Reload configuration without reloading plugin or server
 
 Permissions
 ===========
@@ -49,7 +50,18 @@ Permissions
 
 Configuration
 =============
-Not yet...
+
+__Default config.yml file:__
+
+    recordings:
+        showlogsaved: false        <--- Show a message in server's console saying "X logs saved"
+        savelimit: 30              <--- How many logs wait for autosave
+    log:
+        breakblock: true           <--- Log block breaking
+        placeblock: true           <--- Log block placing
+        openchest: true            <--- Log chest openning
+        explosions: true           <--- Log explosions
+        playerinteractions: true   <--- Log doors/levers/buttons interactions
 
 This plugin is quite short
 ==========================
