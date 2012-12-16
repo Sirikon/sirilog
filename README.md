@@ -2,7 +2,7 @@
 
 __SiriLog__ is a system event log really simple and easy for administrators who need to record everything that happens.
 
-__Tested on Tekkit!__
+I'm trying to develop this plugin with Mods like IndustrialCraft, BuildCraft or RedPower in mind, so this plugin maybe will not record all the events in this mods, but at least will record breaking/placing mod blocks and will not break like happens with other plugins.
 
 But... what exactly does SiriLog?
 =================================
