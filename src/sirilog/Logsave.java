@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.Iterator;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class logsave extends JavaPlugin {
+public final class Logsave extends JavaPlugin {
     
     public static ArrayList<String> logs = new ArrayList<>();
     
@@ -23,14 +23,14 @@ public final class logsave extends JavaPlugin {
         m = cal.get(Calendar.MINUTE);
         s = cal.get(Calendar.SECOND);
         logs.add("[" + da + "/" + mo + "/" + ye + " " + h + ":" + m + ":" + s + "] " + pl + " " + a + " " + bl + " X=" + x + " Y=" + y + " Z=" + z + " " + w);
-        if (logs.size() >= 15){
+        if (logs.size() >= Configs.config.getInt("recordings.savelimit")){
             finalsave();
         }
     }
-    
+
     public static void finalsave() throws IOException{
         Integer s = logs.size();
-        File sirilog = new File("plugins/SiriLog/sirilog.log");
+        File sirilog = new File("plugins" + File.separator + "SiriLog" + File.separator + "sirilog.log");
         FileWriter fw = new FileWriter(sirilog, true);
         try (PrintWriter pw = new PrintWriter(fw)) {
             Iterator it = logs.iterator();
@@ -39,6 +39,9 @@ public final class logsave extends JavaPlugin {
             }
         }
         logs.clear();
-        System.out.println("[SiriLog] Saved " + s + " log lines");
+        if(Configs.config.getBoolean("recordings.showlogsaved")){
+            System.out.println("[SiriLog] Saved " + s + " log lines");
+        }
+        
     }
 }
