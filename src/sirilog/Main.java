@@ -152,7 +152,7 @@ public final class Main extends JavaPlugin {
                             Iterator l = list.iterator();
                             while(l.hasNext()){
                                 String[] da = (String[]) l.next();
-                                sender.sendMessage(da[0] + " " + da[2] + " " + da[3] + " " + da[4] + " " + da[5] + "-" + da[6] + "-" + da[7]);
+                                sender.sendMessage(da[0] + " " + da[2] + " " + da[3] + " " + da[4] + " " + da[5] + "|" + da[6] + "|" + da[7]);
                             }
                         }else{
                             sender.sendMessage("You need to select two blocks with the Wand (wooden pickaxe)");
@@ -180,7 +180,7 @@ public final class Main extends JavaPlugin {
                             Iterator l = list.iterator();
                             while(l.hasNext()){
                                 String[] da = (String[]) l.next();
-                                sender.sendMessage(da[0] + " " + da[1] + " " + da[2] + " " + da[3] + " " + da[4] + " " + da[5] + "-" + da[6] + "-" + da[7]);
+                                sender.sendMessage(da[0] + " " + da[1] + " " + da[2] + " " + da[3] + " " + da[4] + " " + da[5] + "|" + da[6] + "|" + da[7]);
                             }
                         }else{
                             sender.sendMessage("Usage: /sl lookid [log's id]");

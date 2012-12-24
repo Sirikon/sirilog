@@ -17,7 +17,7 @@ public final class Logsave extends JavaPlugin {
         Calendar cal = Calendar.getInstance();
         String da, mo, ye, h, m, s;
         da  = String.valueOf(cal.get(Calendar.DAY_OF_MONTH));
-        mo  = String.valueOf(cal.get(Calendar.MONTH));
+        mo  = String.valueOf(cal.get(Calendar.MONTH) + 1);
         ye  = String.valueOf(cal.get(Calendar.YEAR));
         h   = String.valueOf(cal.get(Calendar.HOUR_OF_DAY));
         m   = String.valueOf(cal.get(Calendar.MINUTE));
