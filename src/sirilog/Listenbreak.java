@@ -8,13 +8,13 @@ import org.bukkit.event.block.BlockBreakEvent;
 public final class Listenbreak implements Listener {
     @EventHandler
     public void onPlayerBreaks(BlockBreakEvent event) throws IOException {
-        Logsave.savebl(
+        new Logsave().savebl(
                 event.getPlayer().getName(),            // Who
                 "broke",                                // What
                 event.getBlock().getType().toString(),  // With what
-                event.getBlock().getX(),                // |
-                event.getBlock().getY(),                // |--> Where
-                event.getBlock().getZ(),                // |
+                String.valueOf(event.getBlock().getX()),// |
+                String.valueOf(event.getBlock().getY()),// |--> Where
+                String.valueOf(event.getBlock().getZ()),// |
                 event.getBlock().getWorld().getName()   // Which world
         );
     }

@@ -11,14 +11,18 @@ public final class Listenchest implements Listener {
     @EventHandler
     public void onInventoryOpen(PlayerInteractEvent event) throws IOException{
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK){
-            if (event.getClickedBlock().getState() instanceof InventoryHolder || "ENDER_CHEST".equals(event.getClickedBlock().getType().toString())){
-                Logsave.savebl(
+            if (
+                    event.getClickedBlock().getState() instanceof InventoryHolder ||
+                    "ENDER_CHEST".equals(event.getClickedBlock().getType().toString()) ||
+                    Configs.customchest.contains(event.getClickedBlock().getTypeId())
+            ){
+                new Logsave().savebl(
                         event.getPlayer().getName(),                    // Who
                         "opened",                                       // What
                         event.getClickedBlock().getType().toString(),   // With what
-                        event.getClickedBlock().getX(),                 // |
-                        event.getClickedBlock().getY(),                 // |--> Where
-                        event.getClickedBlock().getZ(),                 // |
+                        String.valueOf(event.getClickedBlock().getX()), // |
+                        String.valueOf(event.getClickedBlock().getY()), // |--> Where
+                        String.valueOf(event.getClickedBlock().getZ()), // |
                         event.getClickedBlock().getWorld().getName()    // Which world
                 );
             }
