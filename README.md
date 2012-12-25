@@ -2,13 +2,11 @@
 
 __SiriLog__ is a system event log really simple and easy for administrators who need to record everything that happens.
 
-I'm trying to develop this plugin with Mods like IndustrialCraft, BuildCraft or RedPower in mind, so this plugin maybe will not record all the events in this mods, but at least will record breaking/placing mod blocks and will not break like happens with other plugins.
+I'm trying to develop this plugin with Mods like IndustrialCraft, BuildCraft or RedPower in mind, so this plugin maybe will not record all the events in this mods, but at least will record breaking/placing mod blocks and will not break like happens with other plugins, as well you can use the custom chests and custom events options for solve some problems with mod events
 
 But... what exactly does SiriLog?
 =================================
-SiriLog records events on your server, and whenever SiriLog record 15 events, save them in a file called "sirilog.log" in "plugins/SiriLog" with the time and date it was recorded, the coordinates and world of the event, the user that caused it and the affected block type.
-
-In the future will be able to save the data in a MySQL database.
+SiriLog records events on your server and save them in a file called "sirilog.log" in "plugins/SiriLog" or into a MySQL database with the time and date it was recorded, the coordinates and world of the event, the user that caused it and the affected block type.
 
 Features
 ========
@@ -18,6 +16,14 @@ SiriLog can __log__:
 - Door/Lever/Button Interactions
 - Chest opennings
 - Explosions (TNT, Creepers...)
+- Custom chests!
+- Custom interactions!
+
+Wait wait... Custom chests and interactions?
+============================================
+Yeah!, this is for servers with mods like IndustrialCraft, BuildCraft, RedPower, etc. where exists some chests, levers, buttons and doors that Bukkit some times cant detect like chests or interactions.
+
+Here is where Custom chests and interactions does his work, if a chest or an interaction cant be detected by SiriLog, put them in line, select all of them with the Wand tool, and write: __"/sl newchest"__ for chests or __"/sl newinteraction"__ for interactions, and it will start to record this events!.
 
 Log Examples
 ============
@@ -43,10 +49,12 @@ Commands
 - __/sl queue__: Shows how many changes are on queue for save
 - __/sl save__: Save the actual queue
 - __/sl reload__: Reload configuration without reloading plugin or server
+- __/sl look__: Lists logs happened between two points selected with the Wand tool (Wooden pickaxe) (Only database mode)
+- __/sl lookid <log's ID>__: More details about a log line using his ID. (Only database mode)
 
 Permissions
 ===========
-- __sirilog.info__: Allow to use "/sl", "/sl queue" and "/sl save"
+- __sirilog.info__: Allow to use all the commands above.
 
 Configuration
 =============
@@ -56,12 +64,21 @@ __Default config.yml file:__
     recordings:
         showlogsaved: false        <--- Show a message in server's console saying "X logs saved"
         savelimit: 30              <--- How many logs wait for autosave
+        mode: file                 <--- How save the logs, in a __file__ or in a __database__
+        mysql:                     <--- Information about MySQL server in __mode database__
+            server: localhost
+            database: sirilog
+            user: root
+            pass: pass
     log:
         breakblock: true           <--- Log block breaking
         placeblock: true           <--- Log block placing
         openchest: true            <--- Log chest openning
         explosions: true           <--- Log explosions
         playerinteractions: true   <--- Log doors/levers/buttons interactions
+    custom:                        <--- Here will appear the custom block IDs added.
+        chests: []
+        interactions: []
 
 This plugin is quite short
 ==========================
