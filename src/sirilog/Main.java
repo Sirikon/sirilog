@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -65,7 +66,6 @@ public final class Main extends JavaPlugin {
  
     @Override
     public void onDisable() {
-        sConfig();
         try {
             new Logsave().finalsave();
             getLogger().info("Queue saved");
@@ -77,6 +77,12 @@ public final class Main extends JavaPlugin {
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
+        ChatColor red = ChatColor.RED;
+        ChatColor blu = ChatColor.AQUA;
+        ChatColor gol = ChatColor.GOLD;
+        ChatColor gre = ChatColor.GREEN;
+        ChatColor res = ChatColor.RESET;
+        ChatColor yel = ChatColor.YELLOW;
 	if(cmd.getName().equalsIgnoreCase("sl")) {
             if (args.length >= 1){
                 switch (args[0]) {
@@ -142,7 +148,7 @@ public final class Main extends JavaPlugin {
                                     + " `x` BETWEEN " + x1 + " AND " + x2 + " AND"
                                     + " `y` BETWEEN " + y1 + " AND " + y2 + " AND"
                                     + " `z` BETWEEN " + z1 + " AND " + z2 + " AND"
-                                    + " `world` = " + w1;
+                                    + " `world` = '" + w1 + "'";
                             try {
                                 list = new MySQL().getData(q);
                             } catch (SQLException ex) {
@@ -152,7 +158,7 @@ public final class Main extends JavaPlugin {
                             Iterator l = list.iterator();
                             while(l.hasNext()){
                                 String[] da = (String[]) l.next();
-                                sender.sendMessage(da[0] + " " + da[2] + " " + da[3] + " " + da[4] + " " + da[5] + "|" + da[6] + "|" + da[7]);
+                                sender.sendMessage(red + da[0] + blu + " " + da[2] + " " + red + da[3] + gol + " " + da[4] + res + " " + da[5] + " | " + da[6] + " | " + da[7]);
                             }
                         }else{
                             sender.sendMessage("You need to select two blocks with the Wand (wooden pickaxe)");
@@ -180,7 +186,7 @@ public final class Main extends JavaPlugin {
                             Iterator l = list.iterator();
                             while(l.hasNext()){
                                 String[] da = (String[]) l.next();
-                                sender.sendMessage(da[0] + " " + da[1] + " " + da[2] + " " + da[3] + " " + da[4] + " " + da[5] + "|" + da[6] + "|" + da[7]);
+                                sender.sendMessage(red + da[0] + yel + " " + da[1] + blu + " " + da[2] + " " + red + da[3] + " " + gol + da[4] + " " + res + da[5] + "|" + da[6] + "|" + da[7]);
                             }
                         }else{
                             sender.sendMessage("Usage: /sl lookid [log's id]");
@@ -306,7 +312,7 @@ public final class Main extends JavaPlugin {
                         break;
                 }
             }else {
-                sender.sendMessage("SiriLog 0.0.4 running on this server!");
+                sender.sendMessage("SiriLog 0.0.5 running on this server!");
             }
             return true;
         }
