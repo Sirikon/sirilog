@@ -62,10 +62,10 @@ Configuration
 __Default config.yml file:__
 
     recordings:
-        showlogsaved: false        <--- Show a message in server's console saying "X logs saved"
+        showlogsaved: false        <--- Show "X logs saved" on save
         savelimit: 30              <--- How many logs wait for autosave
-        mode: file                 <--- How save the logs, in a __file__ or in a __database__
-        mysql:                     <--- Information about MySQL server in __mode database__
+        mode: file                 <--- How save the logs, file or database
+        mysql:                     <--- MySQL configuration
             server: localhost
             database: sirilog
             user: root
@@ -76,7 +76,7 @@ __Default config.yml file:__
         openchest: true            <--- Log chest openning
         explosions: true           <--- Log explosions
         playerinteractions: true   <--- Log doors/levers/buttons interactions
-    custom:                        <--- Here will appear the custom block IDs added.
+    custom:                        <--- Custom chests and interactions.
         chests: []
         interactions: []
 
