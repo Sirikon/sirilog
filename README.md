@@ -1,6 +1,6 @@
 ![SiriLog logo](http://dev.bukkit.org/media/images/48/911/SiriLog.png)
 
-__SiriLog__ is a system event log really simple and easy for administrators who need to record everything that happens.
+__SiriLog__ is a system event log really simple and easy for administrators who need to record everything that happens, __with MySQL support!__
 
 I'm trying to develop this plugin with Mods like IndustrialCraft, BuildCraft or RedPower in mind, so this plugin maybe will not record all the events in this mods, but at least will record breaking/placing mod blocks and will not break like happens with other plugins, as well you can use the custom chests and custom events options for solve some problems with mod events
 
