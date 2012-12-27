@@ -50,7 +50,7 @@ Commands
 - __/sl save__: Save the actual queue
 - __/sl reload__: Reload configuration without reloading plugin or server
 - __/sl look__: Lists logs happened between two points selected with the Wand tool (Wooden pickaxe) (Only database mode)
-- __/sl lookid <log's ID>__: More details about a log line using his ID. (Only database mode)
+- __/sl lookid [log's ID]__: More details about a log line using his ID. (Only database mode)
 - __/sl newchest__: Save selected zone blocks as custom chests
 - __/sl newinteraction__: Save selected zone blocks as custom interactions
 
